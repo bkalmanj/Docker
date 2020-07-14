@@ -1,0 +1,32 @@
+1. Installing docker on CentOS 7
+
+   Login as root and add the following if not present.
+   yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+   yum install docker-ce
+   
+   ## If any dependency error while running above command, please add below repo in /etc/yum.repos.d/ directory ##
+   
+   [base]
+   name=CentOS $releasever – Base
+   baseurl=http://mirror.centos.org/centos/7/os/$basearch/
+   gpgcheck=0
+   enabled=1
+
+   [updates]
+   name=CentOS $releasever – Updates
+   baseurl=http://mirror.centos.org/centos/7/updates/$basearch/
+   gpgcheck=0
+   enabled=1
+
+   [extras]
+   name=CentOS $releasever – Extras
+   baseurl=http://mirror.centos.org/centos/7/extras/$basearch/
+   gpgcheck=0
+   enabled=1
+
+  yum clean all 
+  yum repolist 
+  
+2. Start and Enable the docker daemon
+   systemctl start docker
+   systemctl enable docker
