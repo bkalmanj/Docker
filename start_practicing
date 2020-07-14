@@ -1,0 +1,36 @@
+### Check the status of docker, it should be started. If not, start it. 
+    systemctl status docker
+    systemctl start docker
+    
+### Test docker service by running below command.
+    $ docker run hello-world
+    Unable to find image 'hello-world:latest' locally
+    latest: Pulling from library/hello-world
+    0e03bdcc26d7: Pull complete 
+    Digest: sha256:d58e752213a51785838f9eed2b7a498ffa1cb3aa7f946dda11af39286c3db9a9
+    Status: Downloaded newer image for hello-world:latest
+
+    Hello from Docker!
+    This message shows that your installation appears to be working correctly.
+    
+### Getting started with container creation. 
+    $ docker pull alpine >> alpine is the simple Linux container image, this command will pull the image from docker registery and stores it locally.
+    $ docker images >> Show images on you local repository, right now it should be showing hello-world and alpine images in case if you had followed above.
+    $ docker run alpine >> Starts the container and executes the CMD(command) listed in its config file, once the command is executed container will exit. 
+    $ docker run -d alpine >> Starts the container is background. -d => detached mode.
+    $ docker inspect alpine >> To check the configs of alpine, you can even find CMD.
+    $ docker run -it alpine /bin/bash >> Starts the container interactively wherein it gives you a prompt and you can check whatever you want.
+    $ docker exec -it alpine >> If you already have a running container and want to login and check something. 
+    
+### Checking the status of container.
+    $ docker ps >> Shows a list of active containers including other details like name, command, image name etc.
+    $ docker ps -a >> Shows list of all the active and inactive containers.
+    $ docker stop ID >> Stopping the container, ID is container id which you find using above command.
+    
+
+    
+    
+    
+    
+
+
