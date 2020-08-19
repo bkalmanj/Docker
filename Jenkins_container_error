@@ -1,0 +1,10 @@
+Whenever you are trying to create a jenkins container and facing with the below error. 
+1) Check firewall, if it is enabled then check if the port is added to it and try to restart firewalld.
+2) If firewall is disabled. Then restart docker and try to execute the command again. 
+
+
+[root@docker ~]# docker run -p 8080:8080 --name=jenkins-practice jenkins/jenkins
+docker: Error response from daemon: driver failed programming external connectivity on endpoint jenkins-practice 
+(4f35408535d9f6ba7422e0286cb0f49bfa7da59d9873242e1aa5f900185a1351):  (iptables failed: iptables --wait -t nat -A 
+DOCKER -p tcp -d 0/0 --dport 8080 -j DNAT --to-destination 172.17.0.2:8080 ! -i docker0: iptables: No chain/target/match by that name.
+ (exit status 1)).
